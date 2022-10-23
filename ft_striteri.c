@@ -6,21 +6,21 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 19:02:43 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/21 21:01:26 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/22 10:57:39 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_striteri(char *s, void (*f)(unsigned int,char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    int i;
-    
-    i = 0;
-    if(s)
-    {
-        while(s[i])
-        {
-            f(i,s + i);
-            i++;
-        }
-    }
+	int	i;
+
+	i = 0;
+	if (s)
+	{
+		while (s[i])
+		{
+			f(i, s + i);
+			i++;
+		}
+	}
 }

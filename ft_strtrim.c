@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:35:57 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/18 12:32:38 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/22 11:59:32 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	start(char const *s1, char const *set)
 				break ;
 			j++;
 		}
-		if (j == strlen(set))
+		if (j == ft_strlen(set))
 			break ;
 		i++;
 	}

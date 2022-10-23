@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:52:06 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/21 13:06:26 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/22 11:06:14 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ static int	count_elm(char const *s, char c)
 	{
 		if (i == 0)
 		{
-          if (s[i] != c)
-                elm++;
-          else if (s[i +1] != c)
-            elm++;
+			if (s[i] != c)
+				elm++;
+			else if (s[i + 1] != c)
+				elm++;
 		}
 		else if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
 		{
@@ -80,30 +80,28 @@ static char	*allocate(char const *s, int words)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	int		elm;
-	char	**ptr;
+	t_split	split;
 
 	if (!s)
 		return (NULL);
-	elm = count_elm(s, c);
-	i = 0;
-	ptr = (char **)malloc(sizeof(char *) * (elm + 1));
-	if (!ptr)
+	split.elm = count_elm(s, c);
+	split.i = 0;
+	split.ptr = (char **)malloc(sizeof(char *) * (split.elm + 1));
+	if (!split.ptr)
 		return (NULL);
-	while (elm && *s)
+	while (split.elm && *s)
 	{
 		if (*s != c)
 		{
-			ptr[i] = allocate(s, count_words(s, c));
-			if (!ptr[i])
-				return (free_space(ptr, i));
+			split.ptr[split.i] = allocate(s, count_words(s, c));
+			if (!split.ptr[split.i])
+				return (free_space(split.ptr, split.i));
 			s = s + count_words(s, c);
-			elm--;
-			i++;
+			split.elm--;
+			split.i++;
 		}
 		s++;
 	}
-	ptr[i] = NULL;
-	return (ptr);
+	split.ptr[split.i] = NULL;
+	return (split.ptr);
 }

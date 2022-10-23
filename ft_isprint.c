@@ -6,19 +6,19 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:29:41 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/11 18:01:48 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/22 10:55:07 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    unsigned char p;
-    
-    p = (unsigned char)c;
-    if(c >= 32 && c <= 126)
-        return (1);
-    else
-        return (0);
+	unsigned char	p;
+
+	p = (unsigned char)c;
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }
