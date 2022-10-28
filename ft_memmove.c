@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:01:58 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/17 17:41:20 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/26 11:23:37 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size = len;
 	if ((!src && !dst) || len == 0 || src == dst)
 		return (dst);
-	if ((const char *)src < (char *)dst)
+	if (src < dst)
 	{
 		while (len--)
-			*(char *)(dst + len) = *(const char *)(src + len);
+			*(char *)(dst + len) = *(char *)(src + len);
 		return (dst);
 	}
 	else

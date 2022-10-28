@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:19:18 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/22 10:42:42 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/27 19:55:25 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
 
-	if (count == SIZE_MAX || size == SIZE_MAX)
-		return (0);
-	p = (void *)malloc(size * count);
+	p = malloc(size * count);
 	if (!p)
 		return (NULL);
 	ft_bzero(p, count * size);

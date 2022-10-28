@@ -1,4 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/26 14:44:52 by aalami            #+#    #+#              #
+#    Updated: 2022/10/27 19:06:01 by aalami           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
+
 SOURCES = \
 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c \
@@ -8,29 +21,30 @@ SOURCES = \
 	ft_atoi.c ft_memmove.c ft_strtrim.c ft_itoa.c ft_split.c \
 	ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c ft_memcmp.c ft_strlcat.c ft_striteri.c
-BSOURCES = ft_lstnew.c ft_lstadd_front.c \
+
+BONUS = ft_lstnew.c ft_lstadd_front.c \
 	ft_lstsize.c ft_lstlast.c ft_lstadd_back.c 
 
-OBJECTS = $(SOURCES:.c=.o)
-BOBJ = $(BSOURCES:.c=.o)
+OBJ = $(SOURCES:.c=.o)
 
+BOBJ = $(BONUS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)  $(BOBJ)
-	$(AR) -r $(NAME) $?
+$(NAME): $(OBJ)
+	ar -rc $(NAME) $?
 
-bonus:  $(BOBJ) 
-	$(AR) -r $(NAME) $?
+bonus: $(OBJ) $(BOBJ)  
+	ar -rc $(NAME) $?
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) $?
+%.o: %.c libft.h
+	$(CC) -c $(CFLAGS) $<
 
 clean:
-	rm -f $(OBJECTS) $(BOBJ) 
+	rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
 	rm -f $(NAME)

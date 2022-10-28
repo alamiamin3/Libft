@@ -6,13 +6,13 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:33:23 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/23 14:28:38 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/27 19:08:40 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*is_positif(int c)
+static char	*is_positif(int c)
 {
 	size_t	i;
 	char	*p;
@@ -39,7 +39,7 @@ char	*is_positif(int c)
 	return (p);
 }
 
-char	*is_zero(void)
+static char	*is_zero(void)
 {
 	size_t	i;
 	char	*p;
@@ -53,7 +53,7 @@ char	*is_zero(void)
 	return (p);
 }
 
-char	*is_negatif(int c)
+static char	*is_negatif(int c)
 {
 	size_t		i;
 	char		*p;

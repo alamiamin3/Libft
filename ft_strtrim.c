@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:35:57 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/22 11:59:32 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/26 16:03:07 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ static int	start(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
-	int		test;
 
 	i = 0;
-	test = 0;
 	while (s1[i])
 	{
 		j = 0;
@@ -51,10 +49,8 @@ static int	end(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
-	int	test;
 
 	i = ft_strlen(s1) - 1;
-	test = 0;
 	while (i >= 0)
 	{
 		j = ft_strlen(set) - 1;
@@ -90,7 +86,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	j = end(s1, set);
 	len = (j - i) + 1;
-	new = (char *)malloc(len + 1);
+	new = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (NULL);
 	while (len--)

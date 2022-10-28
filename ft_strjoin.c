@@ -6,19 +6,19 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 16:23:28 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/22 11:30:18 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/26 16:06:35 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*allocate(char const *s1, char const *s2)
+static char	*allocate(char const *s1, char const *s2)
 {
 	size_t	size;
 	char	*p;
 
 	size = (ft_strlen(s1) + ft_strlen(s2));
-	p = (char *)malloc((size + 1));
+	p = (char *)malloc(sizeof(char) * (size + 1));
 	if (!p)
 		return (NULL);
 	return (p);

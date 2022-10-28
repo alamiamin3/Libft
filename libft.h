@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:17:45 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/22 12:21:46 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/27 18:45:00 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,6 @@ typedef struct s_split
 	int				elm;
 	char			**ptr;
 }					t_split;
-
-typedef struct s_atoi
-{
-	int				ret;
-	int				sign;
-	size_t			i;
-}					t_atoi;
 
 void				ft_bzero(void *s, size_t n);
 int					ft_toupper(int c);

@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:58:48 by aalami            #+#    #+#             */
-/*   Updated: 2022/10/22 10:50:11 by aalami           ###   ########.fr       */
+/*   Updated: 2022/10/27 19:07:55 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strchr(const char *s, int c)
 	if (c < 0)
 		return (0);
 	i = 0;
-	while (s[i] && (unsigned char)s[i] != (unsigned char)c)
+	while (s[i] && (char)s[i] != (char)c)
 		i++;
-	if ((unsigned char)s[i] == (unsigned char)c)
+	if ((char)s[i] == (char)c)
 		return ((char *)s + i);
 	else
 		return (NULL);
